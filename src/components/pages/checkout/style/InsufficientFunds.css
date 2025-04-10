@@ -1,0 +1,145 @@
+.insufficient-funds {
+  background: rgba(20, 10, 30, 0.7);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
+              0 0 0 1px rgba(156, 39, 176, 0.1), 
+              0 0 20px rgba(103, 58, 183, 0.1);
+  color: #ffffff;
+  border-left: 4px solid #F44336;
+}
+
+.insufficient-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(244, 67, 54, 0.1);
+  border: 2px solid #F44336;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.caution-icon {
+  font-size: 30px;
+  color: #F44336;
+  font-weight: bold;
+}
+
+.insufficient-title {
+  font-size: 1.4rem;
+  color: #F44336;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.insufficient-message {
+  font-size: 1.1rem;
+  color: #d0b0f0;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.missing-amount {
+  font-weight: 700;
+  color: #F44336;
+}
+
+.add-funds-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  background: linear-gradient(to right, #F44336, #ff9800);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2),
+              0 0 15px rgba(244, 67, 54, 0.3);
+  margin-bottom: 20px;
+}
+
+.add-funds-button:hover {
+  background: linear-gradient(to right, #ff5252, #ffa726);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25),
+              0 0 20px rgba(244, 67, 54, 0.4);
+  transform: translateY(-2px);
+}
+
+.add-funds-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2),
+              0 0 10px rgba(244, 67, 54, 0.2);
+}
+
+.button-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.insufficient-note {
+  font-size: 0.85rem;
+  color: #b39ddb;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .caution-icon {
+    font-size: 25px;
+  }
+  
+  .insufficient-title {
+    font-size: 1.3rem;
+  }
+  
+  .insufficient-message {
+    font-size: 1rem;
+  }
+  
+  .add-funds-button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .insufficient-funds {
+    padding: 20px 15px;
+  }
+  
+  .insufficient-title {
+    font-size: 1.2rem;
+  }
+  
+  .insufficient-message {
+    font-size: 0.95rem;
+  }
+  
+  .add-funds-button {
+    padding: 12px 18px;
+  }
+  
+  .insufficient-note {
+    font-size: 0.8rem;
+  }
+} 
