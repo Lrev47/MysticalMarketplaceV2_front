@@ -2,6 +2,20 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import * as authAPI from '../../api/authAPI';
 
 // Async thunks
+export const initializeAuth = createAsyncThunk(
+  'auth/initializeAuth',
+  async (_, { rejectWithValue }) => {
+    try {
+      // Get user profile using the token stored in localStorage
+      return await authAPI.getProfile();
+    } catch (error) {
+      // If token is invalid or expired, clear it
+      localStorage.removeItem('token');
+      return rejectWithValue(error.message || 'Auth initialization failed');
+    }
+  }
+);
+
 export const login = createAsyncThunk(
   'auth/login',
   async (credentials, { rejectWithValue }) => {
@@ -82,6 +96,23 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      // Initialize Auth
+      .addCase(initializeAuth.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(initializeAuth.fulfilled, (state, action) => {
+        state.loading = false;
+        state.user = action.payload;
+        state.isAuthenticated = true;
+      })
+      .addCase(initializeAuth.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+        state.isAuthenticated = false;
+        state.token = null;
+      })
+      
       // Login
       .addCase(login.pending, (state) => {
         state.loading = true;

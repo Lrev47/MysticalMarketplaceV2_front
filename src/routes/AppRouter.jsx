@@ -13,7 +13,7 @@ const ProductListing = lazy(() => import('../components/pages/productListing/pro
 const ProductDetails = lazy(() => import('../components/pages/productDetails/productDetailsLayout'));
 const CartPage = lazy(() => import('../components/pages/cart/cartLayout'));
 const CheckoutPage = lazy(() => import('../components/pages/checkout/checkoutLayout'));
-const OrderHistoery = lazy(() => import('../components/pages/orderHistoery/orderHistoeryLayout'));
+const OrderHistoery = lazy(() => import('../components/pages/orderHistory/orderHistoryLayout'));
 const OrderComplete = lazy(() => import('../components/pages/orderComplete/orderCompleteLayout'));
 
 const AppRouter = () => {

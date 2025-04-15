@@ -1,6 +1,6 @@
 import React from 'react';
-import './LoadingSpinner.css';
-import logo from '../../Assets/Mystical-Marketplace.svg';
+// import './LoadingSpinner.css';
+import logo from '../../../public/Mystical-Marketplace.svg';
 
 const LoadingSpinner = () => {
   return (

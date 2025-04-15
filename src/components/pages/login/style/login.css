@@ -1,0 +1,376 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2b2b3d 0%, #3a2b4d 100%);
+}
+
+/* Login Page Styles */
+.login-page {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: transparent;
+  overflow-y: auto;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem auto 2rem;
+}
+
+.avatar-section {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Login Form Styles */
+.login-form-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Input Styles */
+.form-group {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 40px 12px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: rgba(147, 112, 219, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Submit Button Styles */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #9370DB 0%, #7B68EE 100%);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(147, 112, 219, 0.3);
+}
+
+.submit-button:disabled {
+  background: rgba(147, 112, 219, 0.5);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Form Options Styles */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.forgot-password {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: white;
+}
+
+/* Separator Styles */
+.login-separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 1.5rem 0;
+}
+
+.login-separator::before,
+.login-separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.separator-text {
+  padding: 0 1rem;
+}
+
+/* Alternative Login Styles */
+.login-alternative {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.signup-link {
+  color: #9370DB;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.signup-link:hover {
+  color: #7B68EE;
+  text-decoration: underline;
+}
+
+/* Error Message Styles */
+.login-error {
+  background: rgba(255, 87, 87, 0.1);
+  border: 1px solid rgba(255, 87, 87, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  color: #ff5757;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+  .login-page {
+    padding: 80px 1rem 70px;
+  }
+
+  .login-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .login-form-container,
+  .avatar-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 70px 1rem 60px;
+  }
+
+  .form-options {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .avatar-section {
+    padding: 1rem;
+  }
+}
+
+/* Avatar Selection Styles */
+.avatar-select-container {
+  width: 100%;
+}
+
+.avatar-title {
+  text-align: center;
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  padding: 1rem;
+}
+
+.avatar-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.avatar-option:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(147, 112, 219, 0.3);
+}
+
+.avatar-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-name {
+  font-size: 0.85rem;
+  color: #fff;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100px;
+}
+
+.avatar-loading, .avatar-error {
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 1rem;
+}
+
+.avatar-error {
+  color: #ff6b6b;
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.avatar-selection-message {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #9370DB;
+  font-weight: 600;
+  font-style: italic;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles for avatar section */
+@media (max-width: 768px) {
+  .avatar-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+  
+  .avatar-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .avatar-name {
+    font-size: 0.75rem;
+    max-width: 80px;
+  }
+}
+
+.retry-button {
+  margin-top: 1rem;
+  padding: 8px 16px;
+  background: rgba(147, 112, 219, 0.2);
+  border: 1px solid rgba(147, 112, 219, 0.4);
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background: rgba(147, 112, 219, 0.3);
+  transform: translateY(-1px);
+}
+
+.no-users-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: #fff;
+}
+
+.no-users-message p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+} 

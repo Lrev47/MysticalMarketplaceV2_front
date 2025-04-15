@@ -5,7 +5,7 @@ import { login } from '../../../redux/slices/authSlice';
 import FormInput from './FormInput';
 import SubmitButton from './SubmitButton';
 import FormOptions from './FormOptions';
-import './LoginForm.css';
+
 
 const LoginForm = forwardRef((props, ref) => {
   const dispatch = useDispatch();

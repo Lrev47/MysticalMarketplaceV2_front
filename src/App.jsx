@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { Provider, useDispatch } from 'react-redux';
-import { store } from './redux/store';
+import store from './redux/store';
 import AppRouter from './routes/AppRouter';
 import { initializeAuth } from './redux/slices/authSlice';
-import './App.css';
 
 // AuthInitializer component to handle auth initialization
 const AuthInitializer = ({ children }) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../redux/slices/authSlice';
@@ -8,9 +8,14 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isAuthenticated, user } = useSelector(state => state.auth);
-  const userDetails = useSelector(state => state.user.userDetails);
-  const allUsers = useSelector(state => state.user.allUsers);
-  const cartItems = useSelector(state => state.cart?.items || []);
+  const userDetails = useSelector(state => state.users?.currentUser);
+  const usersState = useSelector(state => state.users?.users);
+  const cartState = useSelector(state => state.cart?.items);
+  
+  // Memoize array selections to prevent unnecessary rerenders
+  const allUsers = useMemo(() => usersState || [], [usersState]);
+  const cartItems = useMemo(() => cartState || [], [cartState]);
+  
   const [imageError, setImageError] = useState(false);
   const [userImageUrl, setUserImageUrl] = useState('/Assets/default-avatar.png');
 

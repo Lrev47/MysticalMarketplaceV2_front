@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllUsers } from '../../../redux/slices/userSlice';
-import './AvatarSelect.css';
+import '../style/AvatarSelect.css';
 
 const AvatarSelect = ({ onSelectUser }) => {
   const dispatch = useDispatch();
